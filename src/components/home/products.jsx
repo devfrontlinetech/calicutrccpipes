@@ -39,7 +39,7 @@ Please send quotation.
 `;
 
     window.open(
-      `https://wa.me/919944642711?text=${encodeURIComponent(msg)}`,
+      `https://wa.me/919600544451?text=${encodeURIComponent(msg)}`,
       "_blank",
     );
   };
