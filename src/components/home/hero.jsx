@@ -127,7 +127,7 @@ const Hero = () => {
               className="hero__button hero__button--secondary"
               onClick={() => scrollToSection("contact")}
             >
-              Get In Touch
+              Get In Touch.
             </button>
           </div>
 
