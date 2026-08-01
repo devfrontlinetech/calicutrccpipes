@@ -1,0 +1,700 @@
+/* ======= HERO SECTION  ============ */
+
+.hero {
+  position: relative;
+
+  width: 100%;
+  min-height: 100vh;
+  min-height: 100svh;
+
+  overflow: hidden;
+
+  display: flex;
+  align-items: center;
+
+  background: #071a2dc7;
+
+  isolation: isolate;
+}
+
+/* =========== VIDEO ============= */
+
+.hero__video {
+  position: absolute;
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+  object-position: center;
+
+  z-index: -3;
+
+  pointer-events: none;
+}
+
+/* =====================================================
+   OVERLAY
+===================================================== */
+
+.hero__overlay {
+  position: absolute;
+  inset: 0;
+
+  z-index: -2;
+
+  background: linear-gradient(
+    90deg,
+    rgba(2, 20, 38, 0.441) 0%,
+    rgba(2, 20, 38, 0.341) 38%,
+    rgba(2, 20, 38, 0.225) 70%,
+    rgba(2, 20, 38, 0.448) 100%
+  );
+}
+
+/* =====================================================
+   PATTERN
+===================================================== */
+
+.hero__pattern {
+  position: absolute;
+  inset: 0;
+
+  z-index: -1;
+
+  opacity: 0.08;
+
+  pointer-events: none;
+
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.3) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.3) 1px, transparent 1px);
+
+  background-size: 90px 90px;
+
+  mask-image: linear-gradient(to right, black 0%, transparent 80%);
+}
+
+/* =====================================================
+   MAIN CONTAINER
+===================================================== */
+
+.hero__container {
+  position: relative;
+
+  width: min(100% - 48px, 1280px);
+
+  min-height: 100vh;
+  min-height: 100svh;
+
+  margin: 0 auto;
+
+  padding: 150px 0 170px;
+
+  display: grid;
+
+  grid-template-columns: minmax(0, 1.15fr) minmax(300px, 0.85fr);
+
+  align-items: center;
+
+  gap: 80px;
+}
+
+/* =====================================================
+   CONTENT
+===================================================== */
+
+.hero__content {
+  width: 100%;
+  max-width: 720px;
+}
+
+/* =====================================================
+   EYEBROW
+===================================================== */
+
+.hero__eyebrow {
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  margin-bottom: 24px;
+
+  color: #ffd60a;
+
+  font-size: 12px;
+  font-weight: 700;
+
+  letter-spacing: 2px;
+}
+
+.hero__eyebrow-line {
+  width: 42px;
+  height: 2px;
+
+  background: #ffd60a;
+}
+
+/* =====================================================
+   TITLE
+===================================================== */
+
+.hero__title {
+  margin: 0;
+  color: #ffffff;
+  font-size: clamp(44px, 5.5vw, 58px);
+  line-height: 1.04;
+  font-weight: 800;
+  letter-spacing: -2px;
+  animation: heroFadeUp 0.7s ease both;
+}
+
+.hero__title span {
+  display: block;
+  color: #ffd60a;
+}
+
+/* =====================================================
+   DESCRIPTION
+===================================================== */
+
+.hero__description {
+  max-width: 610px;
+  margin: 28px 0 0;
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 17px;
+  line-height: 1.7;
+  animation: heroFadeUp 0.8s ease both;
+}
+
+/* =====================================================
+   ACTIONS
+===================================================== */
+
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 36px;
+}
+
+.hero__button {
+  min-height: 54px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 0 22px;
+  border-radius: 5px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.hero__button:hover {
+  transform: translateY(-3px);
+}
+
+/* Primary */
+
+.hero__button--primary {
+  border: 1px solid #ffd60a;
+  background: #ffd60a;
+  color: #071a2d;
+}
+
+.hero__button--primary:hover {
+  border-color: #ffffff;
+  background: #ffffff;
+}
+
+/* Secondary */
+
+.hero__button--secondary {
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  background: rgba(255, 255, 255, 0.06);
+  color: #ffffff;
+}
+
+.hero__button--secondary:hover {
+  border-color: #ffd60a;
+  background: #ffd60a;
+  color: #071a2d;
+}
+
+/* =====================================================
+   TRUST ITEMS
+===================================================== */
+
+.hero__trust {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 28px;
+  margin-top: 42px;
+}
+
+.hero__trust-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 11px;
+  line-height: 1.3;
+}
+
+.hero__trust-item svg {
+  color: #ffd60a;
+  font-size: 24px;
+}
+
+.hero__trust-item span {
+  display: flex;
+  flex-direction: column;
+}
+
+.hero__trust-item strong {
+  color: #ffffff;
+  font-size: 12px;
+}
+
+/* =====================================================
+   RIGHT VISUAL
+===================================================== */
+
+.hero__visual {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 420px;
+}
+
+/* Glass Card */
+
+.hero__visual-card {
+  width: min(100%, 400px);
+  padding: 38px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(16px);
+  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.3);
+  animation: floatingCard 5s ease-in-out infinite;
+}
+
+.hero__visual-icon {
+  width: 58px;
+  height: 58px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 26px;
+  border-radius: 50%;
+  background: #ffd60a;
+  color: #071a2d;
+  font-size: 27px;
+}
+
+.hero__visual-label {
+  color: #ffd60a;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.hero__visual-card h2 {
+  margin: 14px 0 18px;
+  color: #ffffff;
+  font-size: 34px;
+  line-height: 1.1;
+}
+
+.hero__visual-card h2 span {
+  display: block;
+  color: #ffd60a;
+}
+
+.hero__visual-card p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.hero__visual-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.hero__visual-footer svg {
+  color: #ffd60a;
+  font-size: 20px;
+}
+
+/* =====================================================
+   FLOATING BADGE
+===================================================== */
+
+.hero__badge {
+  position: absolute;
+  right: 0;
+  bottom: 18px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 18px;
+  border-radius: 6px;
+  background: #bdfabe;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+  color: #071a2d;
+  animation: floatingBadge 4s ease-in-out infinite;
+}
+
+.hero__badge svg {
+  color: #023e8a;
+  font-size: 24px;
+}
+
+.hero__badge span {
+  display: flex;
+  flex-direction: column;
+  font-size: 10px;
+}
+
+.hero__badge strong {
+  font-size: 18px;
+}
+
+/* =====================================================
+   BOTTOM BAR
+===================================================== */
+
+.hero__bottom {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: min(100% - 48px, 1280px);
+  transform: translateX(-50%);
+  padding: 22px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+/* =====================================================
+   STATS
+===================================================== */
+
+.hero__stats {
+  display: flex;
+  align-items: center;
+  gap: 45px;
+}
+
+.hero__stat {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.hero__stat strong {
+  color: #ffd60a;
+  font-size: 22px;
+}
+
+.hero__stat span {
+  color: rgba(255, 255, 255, 0.65);
+  font-size: 11px;
+}
+
+/* =====================================================
+   SLIDER
+===================================================== */
+
+.hero__slider {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 700;
+  margin-top: 151px;
+}
+
+.hero__slider-lines {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.hero__slider-line {
+  width: 26px;
+  height: 3px;
+  padding: 0;
+  border: 0;
+  background: rgba(255, 255, 255, 0.35);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.hero__slider-line--active {
+  width: 52px;
+  background: #ffd60a;
+}
+
+/* =====================================================
+   ANIMATIONS
+===================================================== */
+
+@keyframes heroFadeUp {
+  from {
+    opacity: 0;
+
+    transform: translateY(25px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform: translateY(0);
+  }
+}
+
+@keyframes floatingCard {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+@keyframes floatingBadge {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 1024px) {
+  .hero__container {
+    width: min(100% - 40px, 900px);
+    grid-template-columns: 1fr 0.8fr;
+    gap: 40px;
+  }
+
+  .hero__title {
+    font-size: clamp(42px, 6vw, 64px);
+  }
+
+  .hero__visual-card {
+    padding: 30px;
+  }
+
+  .hero__visual-card h2 {
+    font-size: 28px;
+  }
+
+  .hero__stats {
+    gap: 25px;
+  }
+}
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 768px) {
+  .hero {
+    min-height: 100svh;
+  }
+
+  .hero__overlay {
+    background: linear-gradient(
+      180deg,
+      rgba(2, 20, 38, 0.65) 0%,
+      rgba(2, 20, 38, 0.75) 50%,
+      rgba(2, 20, 38, 0.96) 100%
+    );
+  }
+
+  .hero__container {
+    width: 100%;
+    min-height: auto;
+    padding: 120px 20px 190px;
+    display: block;
+    text-align: center;
+  }
+
+  .hero__content {
+    max-width: 100%;
+  }
+
+  .hero__eyebrow {
+    justify-content: center;
+    font-size: 9px;
+    letter-spacing: 1.2px;
+  }
+
+  .hero__eyebrow-line {
+    width: 25px;
+  }
+
+  .hero__title {
+    font-size: clamp(36px, 10vw, 54px);
+    letter-spacing: -1px;
+  }
+
+  .hero__description {
+    margin: 20px auto 0;
+    font-size: 14px;
+  }
+
+  .hero__actions {
+    justify-content: center;
+    margin-top: 28px;
+  }
+
+  .hero__button {
+    min-height: 48px;
+    padding: 0 16px;
+    font-size: 12px;
+  }
+
+  .hero__trust {
+    justify-content: center;
+    gap: 48px;
+    margin-top: 30px;
+  }
+
+  .hero__trust-item {
+    font-size: 9px;
+  }
+
+  .hero__trust-item svg {
+    font-size: 20px;
+  }
+
+  /* Hide right card on small screens */
+
+  .hero__visual {
+    display: none;
+  }
+
+  /* Bottom */
+
+  .hero__bottom {
+    left: 0;
+    width: 100%;
+    transform: none;
+    padding: 16px 20px;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .hero__stats {
+    width: 100%;
+    justify-content: space-between;
+    gap: 8px;
+  }
+
+  .hero__stat {
+    flex-direction: column;
+    gap: 3px;
+    text-align: center;
+  }
+
+  .hero__stat strong {
+    font-size: 18px;
+  }
+
+  .hero__stat span {
+    font-size: 9px;
+  }
+}
+
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
+
+@media (max-width: 480px) {
+  .hero__container {
+    padding: 105px 16px 185px;
+  }
+
+  .hero__title {
+    font-size: 34px;
+  }
+
+  .hero__description {
+    font-size: 13px;
+  }
+
+  .hero__actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .hero__button {
+    width: 100%;
+  }
+
+  .hero__trust {
+    gap: 50px;
+  }
+
+  .hero__trust-item {
+    gap: 5px;
+  }
+
+  .hero__trust-item svg {
+    font-size: 17px;
+  }
+
+  .hero__stat strong {
+    font-size: 16px;
+  }
+
+  .hero__stat span {
+    font-size: 8px;
+  }
+}
+
+/* =====================================================
+   EXTRA SMALL
+===================================================== */
+
+@media (max-width: 360px) {
+  .hero__container {
+    padding-top: 95px;
+  }
+
+  .hero__title {
+    font-size: 30px;
+  }
+
+  .hero__trust {
+    display: none;
+  }
+}

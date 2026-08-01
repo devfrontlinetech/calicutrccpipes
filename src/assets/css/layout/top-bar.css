@@ -1,0 +1,42 @@
+.top-bar {
+  background: #0077b6; /* Titan blue */
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.9rem;
+}
+
+.top-left,
+.top-right {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.top-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.icon {
+  color: #ffd60a; /* Yellow accent for icons */
+  font-size: 1rem;
+}
+
+/* Responsive: Stack items on small screens */
+@media (max-width: 768px) {
+  .top-bar {
+    flex-direction: column;
+    gap: 5px;
+    text-align: center;
+  }
+
+  .top-left,
+  .top-right {
+    justify-content: center;
+  }
+}

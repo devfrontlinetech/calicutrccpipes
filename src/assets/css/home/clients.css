@@ -1,0 +1,427 @@
+/* =====================================================
+   CLIENTS / TRUSTED PARTNERS
+===================================================== */
+
+.clients-section {
+  position: relative;
+  overflow: hidden;
+
+  padding: 110px 24px;
+
+  background: #ffffff;
+}
+
+/* Background decoration */
+
+.clients-section::before {
+  content: "";
+
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 42%;
+  height: 100%;
+
+  background: linear-gradient(
+    135deg,
+    rgba(2, 62, 138, 0.05),
+    rgba(2, 62, 138, 0.01)
+  );
+
+  clip-path: polygon(0 0, 82% 0, 100% 50%, 82% 100%, 0 100%);
+}
+
+/* =====================================================
+   MAIN LAYOUT
+===================================================== */
+
+.clients-section {
+  display: grid;
+
+  grid-template-columns: minmax(280px, 0.75fr) minmax(0, 1.25fr);
+
+  align-items: center;
+
+  gap: 80px;
+
+  padding-left: max(24px, calc((100vw - 1280px) / 2));
+  padding-right: max(24px, calc((100vw - 1280px) / 2));
+}
+
+/* =====================================================
+   HEADER / LEFT CONTENT
+===================================================== */
+
+.clients-header {
+  position: relative;
+  z-index: 1;
+
+  max-width: 430px;
+}
+
+.clients-header::before {
+  content: "OUR PARTNERS";
+
+  display: inline-flex;
+  align-items: center;
+
+  margin-bottom: 18px;
+  padding-left: 42px;
+
+  color: #023e8a;
+
+  font-size: 11px;
+  font-weight: 800;
+
+  letter-spacing: 2.5px;
+
+  background: linear-gradient(#ffd60a, #ffd60a) left center / 30px 3px no-repeat;
+}
+
+.clients-header h2 {
+  margin: 0;
+
+  color: #0f172a;
+
+  font-size: clamp(38px, 4vw, 58px);
+  line-height: 1.05;
+  font-weight: 800;
+
+  letter-spacing: -2px;
+}
+
+.clients-header h2::after {
+  content: "";
+
+  display: block;
+
+  width: 60px;
+  height: 4px;
+
+  margin-top: 22px;
+
+  border-radius: 10px;
+
+  background: #ffd60a;
+}
+
+.clients-header p {
+  max-width: 390px;
+
+  margin: 25px 0 0;
+
+  color: #64748b;
+
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+/* =====================================================
+   TRUST INFO
+===================================================== */
+
+.clients-header::after {
+  content: "Trusted partnerships built through quality, reliability, and consistent project performance.";
+
+  display: block;
+
+  max-width: 330px;
+
+  margin-top: 35px;
+  padding: 18px 20px;
+
+  border-left: 3px solid #ffd60a;
+
+  background: #f8fafc;
+
+  color: #475569;
+
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+/* =====================================================
+   LOGO WALL
+===================================================== */
+
+.clients-grid {
+  position: relative;
+  z-index: 1;
+
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+
+  grid-auto-rows: 125px;
+
+  gap: 16px;
+
+  width: 100%;
+}
+
+/* =====================================================
+   CLIENT CARD
+===================================================== */
+
+.client-card {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 22px;
+
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+
+  background: #ffffff;
+
+  box-shadow: 0 8px 25px rgba(15, 23, 42, 0.05);
+
+  overflow: hidden;
+
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease,
+    border-color 0.35s ease;
+}
+
+/* Different card sizes */
+
+.client-card:nth-child(1),
+.client-card:nth-child(6) {
+  grid-column: span 2;
+}
+
+.client-card:nth-child(3),
+.client-card:nth-child(9) {
+  grid-row: span 2;
+}
+
+/* Accent corner */
+
+.client-card::before {
+  content: "";
+
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  width: 35px;
+  height: 35px;
+
+  border-top: 3px solid #ffd60a;
+  border-right: 3px solid #ffd60a;
+
+  opacity: 0;
+
+  transition: opacity 0.3s ease;
+}
+
+/* Hover */
+
+.client-card:hover {
+  z-index: 2;
+
+  border-color: rgba(2, 62, 138, 0.25);
+
+  transform: translateY(-8px);
+
+  box-shadow:
+    0 20px 40px rgba(15, 23, 42, 0.12),
+    0 0 0 4px rgba(255, 214, 10, 0.08);
+}
+
+.client-card:hover::before {
+  opacity: 1;
+}
+
+/* =====================================================
+   LOGO
+===================================================== */
+
+.client-card img {
+  display: block;
+
+  width: 100%;
+  max-width: 145px;
+  height: 65px;
+
+  object-fit: contain;
+
+  filter: grayscale(100%);
+
+  opacity: 0.62;
+
+  transition:
+    filter 0.35s ease,
+    opacity 0.35s ease,
+    transform 0.35s ease;
+}
+
+.client-card:hover img {
+  filter: grayscale(0);
+
+  opacity: 1;
+
+  transform: scale(1.08);
+}
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 1050px) {
+  .clients-section {
+    grid-template-columns: 1fr;
+
+    gap: 55px;
+
+    padding: 90px 40px;
+  }
+
+  .clients-header {
+    max-width: 650px;
+
+    text-align: center;
+
+    margin: 0 auto;
+  }
+
+  .clients-header::before {
+    justify-content: center;
+  }
+
+  .clients-header h2::after {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .clients-header p {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .clients-header::after {
+    margin-left: auto;
+    margin-right: auto;
+
+    text-align: left;
+  }
+
+  .clients-grid {
+    max-width: 850px;
+
+    margin: 0 auto;
+  }
+}
+
+/* =====================================================
+   TABLET / MOBILE
+===================================================== */
+
+@media (max-width: 700px) {
+  .clients-section {
+    padding: 75px 20px;
+  }
+
+  .clients-grid {
+    grid-template-columns: repeat(3, 1fr);
+
+    grid-auto-rows: 105px;
+
+    gap: 12px;
+  }
+
+  .client-card {
+    padding: 14px;
+  }
+
+  .client-card img {
+    max-width: 110px;
+    height: 52px;
+  }
+}
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 500px) {
+  .clients-section {
+    padding: 65px 16px;
+  }
+
+  .clients-header h2 {
+    font-size: 36px;
+
+    letter-spacing: -1px;
+  }
+
+  .clients-header p {
+    font-size: 14px;
+  }
+
+  .clients-header::after {
+    font-size: 11px;
+  }
+
+  .clients-grid {
+    grid-template-columns: repeat(2, 1fr);
+
+    grid-auto-rows: 100px;
+
+    gap: 10px;
+  }
+
+  /* Reset special desktop layout */
+
+  .client-card:nth-child(1),
+  .client-card:nth-child(6) {
+    grid-column: span 1;
+  }
+
+  .client-card:nth-child(3),
+  .client-card:nth-child(9) {
+    grid-row: span 1;
+  }
+
+  .client-card img {
+    max-width: 100px;
+    height: 48px;
+  }
+}
+
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
+
+@media (max-width: 360px) {
+  .clients-grid {
+    gap: 8px;
+  }
+
+  .client-card {
+    min-height: 85px;
+
+    padding: 10px;
+  }
+
+  .client-card img {
+    max-width: 85px;
+    height: 40px;
+  }
+}
+
+/* =====================================================
+   REDUCED MOTION
+===================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .client-card,
+  .client-card img {
+    transition: none;
+  }
+}

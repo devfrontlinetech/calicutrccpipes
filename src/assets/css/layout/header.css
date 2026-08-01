@@ -1,0 +1,410 @@
+/* =====================================================
+   SITE HEADER
+===================================================== */
+
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+
+  width: 100%;
+
+  background: transparent;
+  padding: 10px 0;
+  transition:
+    background 0.35s ease,
+    box-shadow 0.35s ease,
+    backdrop-filter 0.35s ease;
+}
+
+.site-header--sticky {
+  background: rgba(2, 30, 66, 0.96);
+
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.18);
+
+  backdrop-filter: blur(14px);
+}
+
+/* =====================================================
+   CONTAINER
+===================================================== */
+
+.site-header__container {
+  width: min(100% - 48px, 1280px);
+  min-height: 82px;
+
+  margin: 0 auto;
+
+  display: flex;
+  align-items: center;
+
+  gap: 30px;
+}
+
+/* =====================================================
+   LOGO
+===================================================== */
+
+.site-header__logo {
+  display: flex;
+  align-items: center;
+
+  flex-shrink: 0;
+
+  padding: 0;
+
+  border: 0;
+  outline: 0;
+
+  background: transparent;
+
+  cursor: pointer;
+}
+
+.site-header__logo img {
+  display: block;
+
+  width: 190px;
+  height: 80px;
+
+  object-fit: contain;
+
+  transition: transform 0.3s ease;
+}
+
+.site-header__logo:hover img {
+  transform: scale(1.04);
+}
+
+/* =====================================================
+   DESKTOP NAVIGATION
+===================================================== */
+
+.site-header__nav {
+  display: flex;
+  align-items: center;
+
+  gap: 6px;
+
+  margin-left: auto;
+}
+
+.site-header__nav > button {
+  position: relative;
+
+  padding: 12px 16px;
+
+  border: 0;
+
+  background: transparent;
+
+  color: #ffffff;
+
+  font-size: 15px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+/* Navigation underline */
+
+.site-header__nav > button::after {
+  content: "";
+
+  position: absolute;
+
+  left: 16px;
+  right: 16px;
+  bottom: 4px;
+
+  height: 2px;
+
+  border-radius: 10px;
+
+  background: #ffd60a;
+
+  transform: scaleX(0);
+
+  transform-origin: center;
+
+  transition: transform 0.3s ease;
+}
+
+.site-header__nav > button:hover {
+  color: #ffd60a;
+
+  transform: translateY(-2px);
+}
+
+.site-header__nav > button:hover::after {
+  transform: scaleX(1);
+}
+
+/* =====================================================
+   DESKTOP CONTACT AREA
+===================================================== */
+
+.site-header__contact {
+  display: flex;
+  align-items: center;
+
+  gap: 20px;
+
+  flex-shrink: 0;
+}
+
+/* Phone */
+
+.site-header__phone {
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  color: #ffffff;
+
+  text-decoration: none;
+}
+
+.site-header__phone-icon {
+  width: 38px;
+  height: 38px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #ffd60a;
+
+  color: #023e8a;
+
+  font-size: 14px;
+
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease;
+}
+
+.site-header__phone:hover .site-header__phone-icon {
+  transform: rotate(12deg) scale(1.08);
+}
+
+.site-header__phone small {
+  display: block;
+
+  margin-bottom: 2px;
+
+  color: rgba(255, 255, 255, 0.7);
+
+  font-size: 10px;
+  font-weight: 500;
+
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.site-header__phone strong {
+  display: block;
+
+  color: #ffffff;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  white-space: nowrap;
+}
+
+/* Location */
+
+.site-header__location {
+  display: flex;
+  align-items: center;
+
+  gap: 7px;
+
+  color: #ffffff;
+
+  font-size: 13px;
+  font-weight: 500;
+
+  white-space: nowrap;
+}
+
+.site-header__location svg {
+  color: #ffd60a;
+}
+
+/* =====================================================
+   RESPONSIVE CALL BUTTON
+===================================================== */
+
+.responsive-call {
+  display: none;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 7px;
+
+  padding: 10px 15px;
+
+  border-radius: 7px;
+
+  background: #ffd60a;
+
+  color: #023e8a;
+
+  font-size: 13px;
+  font-weight: 700;
+
+  text-decoration: none;
+
+  white-space: nowrap;
+
+  transition:
+    background 0.3s ease,
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.responsive-call:hover {
+  background: #ffffff;
+
+  color: #023e8a;
+
+  transform: translateY(-2px);
+}
+
+.responsive-call svg {
+  font-size: 13px;
+}
+
+/* =====================================================
+   HIDDEN MOBILE ELEMENTS
+===================================================== */
+
+.site-header__menu-btn,
+.site-header__nav-header,
+.mobile-contact,
+.header-overlay {
+  display: none;
+}
+
+/* =====================================================
+   LARGE TABLET
+===================================================== */
+
+@media (max-width: 1150px) {
+  .site-header__container {
+    width: min(100% - 32px, 1100px);
+
+    gap: 18px;
+  }
+
+  .site-header__nav {
+    gap: 0;
+  }
+
+  .site-header__nav > button {
+    padding: 10px 10px;
+
+    font-size: 14px;
+  }
+
+  .site-header__contact {
+    gap: 10px;
+  }
+
+  .site-header__location {
+    display: none;
+  }
+
+  .site-header__phone strong {
+    font-size: 12px;
+  }
+}
+
+/* =====================================================
+   TABLET / MOBILE
+===================================================== */
+
+@media (max-width: 900px) {
+  .site-header__container {
+    width: calc(100% - 30px);
+
+    min-height: 74px;
+
+    justify-content: space-between;
+  }
+
+  /* Hide desktop navigation */
+
+  .site-header__nav {
+    display: none;
+  }
+
+  /* Hide desktop contact */
+
+  .site-header__contact {
+    display: none;
+  }
+
+  /* Show responsive call */
+
+  .responsive-call {
+    display: inline-flex;
+  }
+
+  .site-header__logo img {
+    height: 52px;
+  }
+}
+
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
+
+@media (max-width: 480px) {
+  .site-header__container {
+    width: calc(100% - 22px);
+
+    min-height: 68px;
+  }
+
+  .site-header__logo img {
+    height: 44px;
+  }
+
+  .responsive-call {
+    padding: 9px 12px;
+
+    font-size: 12px;
+  }
+
+  .responsive-call svg {
+    font-size: 12px;
+  }
+}
+
+/* =====================================================
+   EXTRA SMALL MOBILE
+===================================================== */
+
+@media (max-width: 360px) {
+  .site-header__logo img {
+    height: 40px;
+  }
+
+  .responsive-call {
+    padding: 8px 10px;
+
+    font-size: 11px;
+  }
+}
