@@ -7,7 +7,7 @@ const FloatingContact = () => {
   const whatsapp = "919600544451";
 
   return (
-    <div className="floating-contact">
+    <div className="floating-contact"> 
       <a
         href={`https://wa.me/${whatsapp}`}
         target="_blank"
