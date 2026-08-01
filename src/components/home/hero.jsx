@@ -178,7 +178,7 @@ const Hero = () => {
 
             <p>
               RCC concrete pipes manufactured for strength, durability, and
-              dependable performance.
+              dependable performance. 
             </p>
 
             <div className="hero__visual-footer">
