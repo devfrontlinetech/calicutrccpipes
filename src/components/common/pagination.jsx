@@ -23,7 +23,7 @@ const Pagination = ({ currentPage, totalPages, setCurrentPage }) => {
           className={currentPage === page ? "active-page" : ""}
           onClick={() => setCurrentPage(page)}
         >
-          {page}
+          {page}  
         </button>
       ))}
 
