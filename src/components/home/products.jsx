@@ -46,7 +46,7 @@ Please send quotation.
         <img src={img} alt={title} />
         <span className="badge">{stock}</span>
       </div>
-
+ 
       <div className="product-content">
         <div className="title-row">
           <h3>{title}</h3>
