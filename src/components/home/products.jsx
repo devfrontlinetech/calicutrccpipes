@@ -46,7 +46,7 @@ Please send quotation.
         <img src={img} alt={title} />
         <span className="badge">{stock}</span>
       </div>
- 
+
       <div className="product-content">
         <div className="title-row">
           <h3>{title}</h3>
@@ -100,15 +100,10 @@ Please send quotation.
 
 const Products = () => {
   const [page, setPage] = useState(1);
-
   const perPage = 8;
-
   const last = page * perPage;
-
   const first = last - perPage;
-
   const showProducts = products.slice(first, last);
-
   const totalPages = Math.ceil(products.length / perPage);
 
   return (
