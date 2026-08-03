@@ -94,7 +94,7 @@ Please send quotation.
           </button>
 
           <button className="details-btn" onClick={whatsappMessage}>
-            <FaInfoCircle /> 
+            <FaInfoCircle />
           </button>
         </div>
       </div>
