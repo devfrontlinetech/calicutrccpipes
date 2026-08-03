@@ -1,17 +1,13 @@
 import React from "react";
 import "../../assets/css/home/products.css";
-
 import {
   FaStar,
   FaShoppingCart,
   FaInfoCircle,
   FaRulerCombined,
 } from "react-icons/fa";
-
 import { useState } from "react";
-
 import Pagination from "../common/pagination";
-
 import products from "../data/product-data";
 
 const ProductCard = ({
