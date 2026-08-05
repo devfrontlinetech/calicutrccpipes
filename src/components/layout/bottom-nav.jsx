@@ -100,12 +100,12 @@ function Bottomnav({ onMenuClick }) {
       label: "Home",
     },
     {
-      id: "products",
+      id: "about",
       icon: <FaShoppingCart />,
       label: "about",
     },
     {
-      id: "infrastructure",
+      id: "products",
       icon: <FaIndustry />,
       label: "products",
     },
