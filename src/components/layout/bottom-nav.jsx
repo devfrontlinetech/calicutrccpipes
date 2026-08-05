@@ -110,7 +110,7 @@ function Bottomnav({ onMenuClick }) {
       label: "products",
     },
     {
-      id: "brands",
+      id: "clients",
       icon: <FaUsers />,
       label: "resource",
     },
