@@ -102,17 +102,17 @@ function Bottomnav({ onMenuClick }) {
     {
       id: "products",
       icon: <FaShoppingCart />,
-      label: "Products",
+      label: "about",
     },
     {
       id: "infrastructure",
       icon: <FaIndustry />,
-      label: "Projects",
+      label: "products",
     },
     {
       id: "brands",
       icon: <FaUsers />,
-      label: "Clients",
+      label: "resource",
     },
     {
       id: "contact",
