@@ -89,7 +89,7 @@ Please send quotation.
             Order
           </button>
 
-          <button className="details-btn" onClick={whatsappMessage}>
+          <button className="details-btn" onClick={whatsappMessage}> 
             <FaInfoCircle />
           </button>
         </div>
