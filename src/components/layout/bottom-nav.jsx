@@ -1,3 +1,72 @@
+import React, { useState } from "react";
+import "../../assets/css/layout/bottom-nav.css";
+
+import {
+  FaHome,
+  FaInfoCircle,
+  FaBoxes,
+  FaIndustry,
+  FaPhoneAlt,
+} from "react-icons/fa";
+
+function Bottomnav({ onMenuClick }) {
+  const [active, setActive] = useState("home");
+
+  const menus = [
+    {
+      id: "home",
+      icon: <FaHome />,
+      label: "Home",
+    },
+    {
+      id: "about",
+      icon: <FaInfoCircle />,
+      label: "About",
+    },
+    {
+      id: "products",
+      icon: <FaBoxes />,
+      label: "Products",
+    },
+    {
+      id: "clients",
+      icon: <FaIndustry />,
+      label: "Resources",
+    },
+    {
+      id: "contact",
+      icon: <FaPhoneAlt />,
+      label: "Contact",
+    },
+  ];
+
+  const handleClick = (id) => {
+    setActive(id);
+    onMenuClick(id);
+  };
+
+  return (
+    <div className="bottom-nav">
+      {menus.map((item) => (
+        <button
+          key={item.id}
+          className={`nav-item ${active === item.id ? "active" : ""}`}
+          onClick={() => handleClick(item.id)}
+        >
+          <span className="icon">{item.icon}</span>
+
+          {active === item.id && <span className="label">{item.label}</span>}
+        </button>
+      ))}
+    </div>
+  );
+}
+
+export default Bottomnav;
+
+
+
+
 // import React, { useState } from "react";
 // import "../../assets/css/layout/bottom-nav.css";
 
@@ -77,70 +146,3 @@
 // }
 
 // export default Bottomnav;
-
-
-import React, { useState } from "react";
-import "../../assets/css/layout/bottom-nav.css";
-
-import {
-  FaHome,
-  FaShoppingCart,
-  FaIndustry,
-  FaUsers,
-  FaEnvelope,
-} from "react-icons/fa";
-
-function Bottomnav({ onMenuClick }) {
-  const [active, setActive] = useState("home");
-
-  const menus = [
-    {
-      id: "home",
-      icon: <FaHome />,
-      label: "Home",
-    },
-    {
-      id: "about",
-      icon: <FaShoppingCart />,
-      label: "about",
-    },
-    {
-      id: "products",
-      icon: <FaIndustry />,
-      label: "products",
-    },
-    {
-      id: "clients",
-      icon: <FaUsers />,
-      label: "resource",
-    },
-    {
-      id: "contact",
-      icon: <FaEnvelope />,
-      label: "Contact",
-    },
-  ];
-
-  const handleClick = (id) => {
-    setActive(id);
-    onMenuClick(id);
-  };
-
-  return (
-    <div className="bottom-nav">
-      {menus.map((item) => (
-        <button
-          key={item.id}
-          className={`nav-item ${active === item.id ? "active" : ""}`}
-          onClick={() => handleClick(item.id)}
-        >
-          <span className="icon">{item.icon}</span>
-
-          {active === item.id && <span className="label">{item.label}</span>}
-        </button>
-      ))}
-    </div>
-  );
-}
-
-export default Bottomnav;
